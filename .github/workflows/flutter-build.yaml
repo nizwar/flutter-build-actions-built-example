@@ -31,7 +31,6 @@ jobs:
           build_dir: doc/api
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-
   # Build APKs
   build_apks:
     name: Build APKs
@@ -124,6 +123,6 @@ jobs:
         with:
           artifacts: "build/app/outputs/bundle/release/*.aab, build/app/outputs/flutter-apk/*.apk"
           token: ${{ secrets.GITHUB_TOKEN }}
-          tag: v${{ steps.project_version.outputs.version_number }}-${{github.run_number}}
+          tag: v${{ steps.project_version.outputs.version_number }}+${{steps.project_version.outputs.build_number}}-${{github.run_number}}
           name: "Release ${{ steps.project_version.outputs.version_number }} build(${{steps.project_version.outputs.build_number}})"
           generateReleaseNotes: true
