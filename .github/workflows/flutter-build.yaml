@@ -58,7 +58,7 @@ jobs:
         run: flutter build apk --release --split-per-abi
  
       - name: Upload artifacts
-        uses: actions/upload-artifact@master
+        uses: actions/upload-artifact@v3
         with:
           name: publish-artifacts
           path: build/app/outputs/flutter-apk/*.apk
@@ -89,7 +89,7 @@ jobs:
         run: flutter build appbundle
 
       - name: Upload artifacts
-        uses: actions/upload-artifact@master
+        uses: actions/upload-artifact@v3
         with:
           name: publish-artifacts
           path: build/app/outputs/bundle/release/*.aab
