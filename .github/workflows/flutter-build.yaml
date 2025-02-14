@@ -58,10 +58,11 @@ jobs:
         run: flutter build apk --release --split-per-abi
  
       - name: Upload artifacts
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: publish-artifacts
           path: build/app/outputs/flutter-apk/*.apk
+          overwrite: true
   # Build Appbundle
   build_appbundle:
     name: Build APPBUNDLE
@@ -89,10 +90,11 @@ jobs:
         run: flutter build appbundle
 
       - name: Upload artifacts
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: publish-artifacts
           path: build/app/outputs/bundle/release/*.aab
+          overwrite: true
 
 
   publish:
