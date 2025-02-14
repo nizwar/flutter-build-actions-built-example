@@ -109,13 +109,13 @@ jobs:
         uses: its404/get-flutter-version@v1.0.0
         
       - name: Download apks
-        uses: actions/download-artifact@v2
+        uses: actions/download-artifact@v4
         with:
           name: publish-artifacts
           path: build/app/outputs/flutter-apk
 
       - name: Download appbundle
-        uses: actions/download-artifact@v2
+        uses: actions/download-artifact@v4
         with:
           name: publish-artifacts
           path: build/app/outputs/bundle/prodRelease
